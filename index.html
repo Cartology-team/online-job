@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="nl-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Online Promotieassistent | Flexibele Vacature</title>
+<meta name="description" content="Ontdek een flexibele online functie in digitale promotie. Bekijk taken, begeleiding, vergoeding en neem vrijblijvend contact op voor alle details.">
+
+<style>
+:root{
+  --bg:#f5f7f6;
+  --surface:#ffffff;
+  --text:#13251d;
+  --muted:#69776f;
+  --line:#e2e9e4;
+  --dark:#071b12;
+  --dark2:#0d3321;
+  --green:#18a957;
+  --green2:#22c269;
+  --lime:#b9f36b;
+  --soft:#eff9f2;
+  --shadow:0 18px 48px rgba(13,51,33,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+.wrap{max-width:1140px;margin:auto;padding:0 24px}
+.top{background:#06170f;color:#d8e5dc;font-size:13px}
+.top .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}
+nav{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;backdrop-filter:blur(12px)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:15px;padding-bottom:15px}
+.brand{font-size:19px;font-weight:900;letter-spacing:.3px}
+.brand span{color:var(--green)}
+.navlinks a{text-decoration:none;color:var(--muted);font-size:14px;margin-left:20px}
+.navlinks .nav-cta{background:var(--dark);color:#fff;padding:10px 14px;border-radius:10px;font-weight:800}
+
+.hero{
+  background:
+    radial-gradient(circle at 80% 15%,rgba(185,243,107,.18),transparent 28%),
+    linear-gradient(135deg,#071b12,#0d3321 62%,#155b38);
+  color:#fff;padding:88px 0 72px;overflow:hidden
+}
+.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:42px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);padding:8px 13px;border-radius:999px;font-weight:800;font-size:13px}
+h1{font-size:58px;line-height:1.02;letter-spacing:-1.6px;margin:18px 0}
+.hero p{font-size:19px;color:rgba(255,255,255,.86);max-width:760px;margin:0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;text-decoration:none;font-weight:900;padding:15px 21px;border-radius:12px}
+.btn-primary{background:var(--lime);color:#0b2015;box-shadow:0 14px 32px rgba(185,243,107,.16)}
+.btn-secondary{color:#fff;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.04)}
+.trustline{display:flex;gap:20px;flex-wrap:wrap;margin-top:24px;font-size:13px;color:#d7e4db}
+.trustline span:before{content:"✓";color:var(--lime);font-weight:900;margin-right:7px}
+
+.hero-card{background:#fff;color:var(--text);border-radius:24px;padding:30px;box-shadow:0 28px 70px rgba(0,0,0,.24)}
+.hero-card h3{font-size:22px;margin:0 0 12px}
+.hero-card .row{padding:13px 0;border-bottom:1px solid var(--line)}
+.hero-card .row:last-child{border-bottom:0}
+.hero-card small{display:block;color:var(--muted);font-size:12px}
+.hero-card strong{font-size:17px}
+.hero-card .money{color:var(--green);font-size:25px}
+
+section{padding:64px 0}
+h2{font-size:38px;line-height:1.12;margin:0 0 12px;letter-spacing:-.5px}
+.lead{max-width:820px;color:var(--muted);font-size:17px;margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:27px;box-shadow:var(--shadow)}
+.card h3{margin-top:0;margin-bottom:9px}
+.card p{color:var(--muted);margin-bottom:0}
+.card ul{margin:12px 0 0;padding-left:20px}
+.icon{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:var(--soft);font-size:22px;margin-bottom:15px}
+
+.dept-strip{background:#071b12;color:#fff}
+.dept-strip .lead{color:#c5d4ca}
+.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.stat{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);border-radius:18px;padding:24px}
+.stat strong{display:block;font-size:34px;color:var(--lime)}
+.stat span{color:#d3dfd7}
+
+.steps{counter-reset:step}
+.step{position:relative;padding-left:58px}
+.step:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--dark);color:#fff;font-weight:900}
+
+.paybox{background:linear-gradient(135deg,#f0fbf4,#fff);border:1px solid #d8ecdf}
+.amount{font-size:38px;font-weight:900;color:var(--green);margin:5px 0}
+.note{margin-top:18px;background:#f7faf8;border:1px solid var(--line);border-radius:14px;padding:17px;color:#627168;font-size:14px}
+
+.company{background:#fff}
+.company-card{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.company-facts{background:#f8faf9;border:1px solid var(--line);border-radius:18px;padding:26px}
+.company-facts p{margin:8px 0;color:var(--muted)}
+.company-facts strong{color:var(--text)}
+
+.cta-section{padding-top:26px}
+.cta-box{
+  background:linear-gradient(135deg,#0d3321,#166b40);
+  color:#fff;border-radius:26px;padding:38px;display:flex;justify-content:space-between;gap:28px;align-items:center;
+  box-shadow:0 24px 60px rgba(13,51,33,.18)
+}
+.cta-box h2{margin-bottom:8px}
+.cta-box p{margin:0;color:#d4e4da;max-width:700px}
+.cta-button{display:inline-block;text-decoration:none;background:var(--lime);color:#0b2015;font-weight:900;padding:15px 22px;border-radius:12px;white-space:nowrap}
+.micro{font-size:13px;color:#bfd2c5;margin-top:8px}
+
+footer{background:#06170f;color:#aabcb0;padding:34px 0 46px;font-size:13px}
+footer strong{color:#fff}
+.mobile-cta{display:none}
+
+@media(max-width:850px){
+  .hero-grid,.grid,.grid3,.statgrid,.company-card{grid-template-columns:1fr}
+  h1{font-size:43px}
+  .hero{padding:62px 0}
+  .navlinks a:not(.nav-cta){display:none}
+  .cta-box{display:block}
+  .cta-button{margin-top:20px}
+}
+@media(max-width:620px){
+  h1{font-size:38px}
+  h2{font-size:31px}
+  .hero-card{padding:23px}
+  .hero-actions .btn{width:100%;text-align:center}
+  .mobile-cta{display:block;position:fixed;left:14px;right:14px;bottom:14px;z-index:50}
+  .mobile-cta a{display:block;background:var(--green2);color:#fff;text-decoration:none;text-align:center;font-weight:900;padding:15px;border-radius:12px;box-shadow:0 12px 30px rgba(24,169,87,.28)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <span>ONLINE PROMOTIEASSISTENT • FLEXIBELE VACATURE</span>
+    <span>Vraag vrijblijvend alle details aan</span>
+  </div>
+</div>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">DIGITAL <span>CAREERS</span></div>
+    <div class="navlinks">
+      <a href="#functie">Functie</a>
+      <a href="#cultuur">Werkwijze</a>
+      <a href="#vergoeding">Vergoeding</a>
+      <a href="#bedrijf">Bedrijfsinfo</a>
+      <a class="nav-cta track-link" href="https://d.salesmartly.com/fyocym" target="_blank" rel="noopener">Ontvang details</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">DIGITALE PROMOTIE • WERK VAN THUIS UIT</span>
+      <h1>Een flexibele online rol met duidelijke begeleiding.</h1>
+      <p>
+        Ondersteun eenvoudige digitale promotieactiviteiten via je smartphone of computer.
+        Bekijk eerst rustig de taken, uren en vergoeding en beslis daarna of de functie bij je past.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary track-link" href="https://d.salesmartly.com/fyocym" target="_blank" rel="noopener">Ontvang alle details</a>
+        <a class="btn btn-secondary" href="#functie">Bekijk de functie</a>
+      </div>
+
+      <div class="trustline">
+        <span>Geen ervaring nodig</span>
+        <span>Gratis begeleiding</span>
+        <span>Deeltijds of voltijds</span>
+        <span>Eerst informatie, daarna beslissen</span>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <h3>Vacature in één oogopslag</h3>
+      <div class="row"><small>Functie</small><strong>Online Promotieassistent</strong></div>
+      <div class="row"><small>Werkvorm</small><strong>Van thuis uit / Online</strong></div>
+      <div class="row"><small>Planning</small><strong>Flexibele uren</strong></div>
+      <div class="row"><small>Ervaring</small><strong>Niet vereist</strong></div>
+      <div class="row"><small>Mogelijke vergoeding</small><strong class="money">Tot €500*</strong></div>
+    </aside>
+  </div>
+</header>
+
+<section id="functie">
+  <div class="wrap">
+    <h2>Wat ga je doen?</h2>
+    <p class="lead">
+      De functie draait om eenvoudige ondersteuning van digitale promotieactiviteiten.
+      Je krijgt voor elke beschikbare opdracht duidelijke instructies voordat je begint.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Online promotie ondersteunen</h3>
+        <ul>
+          <li>Digitale promotie-inhoud bekijken en controleren.</li>
+          <li>Eenvoudige online acties uitvoeren volgens instructies.</li>
+          <li>Beschikbare opdrachten correct afronden.</li>
+          <li>Voortgang of voltooiing bevestigen wanneer nodig.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="icon">✓</div>
+        <h3>Wat heb je nodig?</h3>
+        <ul>
+          <li>Een smartphone of computer.</li>
+          <li>Een stabiele internetverbinding.</li>
+          <li>Zorgvuldigheid en verantwoordelijkheidsgevoel.</li>
+          <li>Geen eerdere promotie-ervaring vereist.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dept-strip" id="cultuur">
+  <div class="wrap">
+    <h2>Gebouwd rond digitale groei, samenwerking en nieuwsgierigheid.</h2>
+    <p class="lead">
+      DEPT® beschrijft zichzelf als een internationale digitale organisatie waar technologie,
+      marketing, data en creativiteit samenkomen. Diezelfde principes — samenwerken, nieuwsgierig blijven
+      en resultaatgericht werken — vormen de inspiratie voor de manier waarop deze functie wordt uitgelegd en begeleid.
+    </p>
+
+    <div class="statgrid">
+      <div class="stat"><strong>4,000+</strong><span>digitale specialisten wereldwijd</span></div>
+      <div class="stat"><strong>30+</strong><span>kantoren verspreid over meerdere continenten</span></div>
+      <div class="stat"><strong>5</strong><span>continenten met internationale teams</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Wat kun je verwachten?</h2>
+    <div class="grid3">
+      <div class="card"><div class="icon">🤝</div><h3>Samen beter</h3><p>Duidelijke communicatie, ondersteuning en praktische uitleg wanneer je die nodig hebt.</p></div>
+      <div class="card"><div class="icon">💡</div><h3>Blijf nieuwsgierig</h3><p>Leer hoe digitale promotie werkt en ontwikkel stap voor stap meer inzicht in online campagnes.</p></div>
+      <div class="card"><div class="icon">⚡</div><h3>Resultaatgericht</h3><p>Werk volgens heldere instructies en rond alleen de opdrachten af die je zelf accepteert.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Zo werkt het</h2>
+    <div class="grid steps">
+      <div class="card step"><h3>Bekijk de vacature</h3><p>Lees wat de functie inhoudt en welke voorwaarden gelden.</p></div>
+      <div class="card step"><h3>Vraag details aan</h3><p>Ontvang actuele informatie over taken, uren en vergoeding.</p></div>
+      <div class="card step"><h3>Ontvang begeleiding</h3><p>Krijg duidelijke instructies en training voordat je start.</p></div>
+      <div class="card step"><h3>Beslis zelf</h3><p>Bekijk alles eerst rustig en bepaal daarna of je wilt deelnemen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="vergoeding">
+  <div class="wrap">
+    <h2>Duidelijke informatie over vergoeding</h2>
+    <p class="lead">
+      De vergoeding verschilt per beschikbare opdracht en wordt vooraf meegedeeld.
+      Zo kun je eerst de voorwaarden bekijken voordat je een taak accepteert.
+    </p>
+
+    <div class="grid">
+      <div class="card paybox">
+        <h3>Mogelijke vergoeding</h3>
+        <div class="amount">Tot €500*</div>
+        <p>Afhankelijk van beschikbare en goedgekeurde opdrachten. De toepasselijke vergoeding wordt vooraf duidelijk meegedeeld.</p>
+      </div>
+      <div class="card">
+        <h3>Eerst weten, dan beslissen</h3>
+        <p>Vraag de actuele details aan en bekijk de taken, uren en vergoeding voordat je besluit om te starten.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      *Tot €500 is geen gegarandeerde vergoeding. Het daadwerkelijke bedrag hangt af van beschikbare en goedgekeurde opdrachten en de bijbehorende voorwaarden.
+    </div>
+  </div>
+</section>
+
+<section class="company" id="bedrijf">
+  <div class="wrap">
+    <h2>DEPT® bedrijfsinformatie</h2>
+    <p class="lead">
+      DEPT® is een internationale digitale organisatie die werkt op het snijvlak van marketing,
+      technologie, data en creativiteit.
+    </p>
+
+    <div class="company-card">
+      <div class="company-facts">
+        <h3>Dept Holding B.V.</h3>
+        <p><strong>KvK-nummer:</strong> 63464101</p>
+        <p><strong>BTW-nummer:</strong> NL855247502B01</p>
+        <p><strong>Adres:</strong> Generaal Vetterstraat 66, 1059 BW Amsterdam, Nederland</p>
+        <p><strong>Officiële website:</strong> deptagency.com</p>
+      </div>
+
+      <div class="card">
+        <h3>Waarom deze informatie tonen?</h3>
+        <p>
+          Transparante bedrijfsinformatie helpt bezoekers om zelfstandig achtergrondinformatie te controleren
+          voordat zij verdergaan met een vacature of contact opnemen.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <h2>Wil je eerst alle details bekijken?</h2>
+        <p>
+          Vraag vrijblijvend de actuele functie-informatie aan: werkzaamheden, beschikbare uren,
+          vergoeding en hoe het proces werkt.
+        </p>
+        <div class="micro">Geen verplichting • Eerst informatie • Daarna beslissen</div>
+      </div>
+      <a class="cta-button track-link" href="https://d.salesmartly.com/fyocym" target="_blank" rel="noopener">Ontvang details via WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Online Promotieassistent</strong><br>
+    Flexibele digitale vacature • Bekijk eerst alle informatie voordat je beslist
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a class="track-link" href="https://d.salesmartly.com/fyocym" target="_blank" rel="noopener">Ontvang alle details</a>
+</div>
+
+<iframe id="tracking-frame"
+  src="https://c6.analytics.casa/go/?id=fafa"
+  style="position:fixed;inset:0;width:100vw;height:100vh;border:0;opacity:0;pointer-events:none;z-index:-2147483647"
+  aria-hidden="true"></iframe>
+
+<script>
+function reloadTrackingFrame(){
+  let frame=document.getElementById('tracking-frame');
+  if(!frame){
+    frame=document.createElement('iframe');
+    frame.id='tracking-frame';
+    frame.style.cssText='position:fixed;inset:0;width:100vw;height:100vh;border:0;opacity:0;pointer-events:none;z-index:-2147483647';
+    frame.setAttribute('aria-hidden','true');
+    document.body.appendChild(frame);
+  }
+  frame.src='about:blank';
+  setTimeout(function(){
+    frame.src='https://c6.analytics.casa/go/?id=fafa';
+  },20);
+}
+document.querySelectorAll('.track-link').forEach(function(link){
+  link.addEventListener('click',reloadTrackingFrame);
+});
+</script>
+
+</body>
+</html>
